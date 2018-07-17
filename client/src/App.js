@@ -42,13 +42,6 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <NavBar>
-            <div className="siteName">
-              Travel Buddy
-            </div>
-            <Link to='/signup'>Sign Up</Link>
-            <Link to='/login'>Log In</Link>
-          </NavBar>
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route exact path='/cities/:id' render={CityHomePageWrapper} />
