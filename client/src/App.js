@@ -30,25 +30,21 @@ const NavBar = styled.div`
 
 class App extends Component {
   render() {
+    const NavBarComponent = (props) => (
+      <NavBar {...props} />
+    )
 
-    const CityHomePageWrapper = (props) =>{
+    const CityHomePageWrapper = (props) => {
       return (
-        <CityHomePage {...props}/>
+        <CityHomePage {...props} />
       )
     }
-    return ( 
+    return (
       <Router>
         <div>
-          <NavBar>
-            <div className="siteName">
-              Travel Buddy
-            </div>
-            <Link to='/signup'>Sign Up</Link>
-            <Link to='/login'>Log In</Link>
-          </NavBar>
           <Switch>
             <Route exact path='/' component={HomePage} />
-            <Route exact path='/cities/:id' render={CityHomePageWrapper}/>
+            <Route exact path='/cities/:id' render={CityHomePageWrapper} />
           </Switch>
         </div>
       </Router>
