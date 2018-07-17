@@ -24,11 +24,11 @@ class CityHomePage extends Component {
     fetchCityAndPostData = () =>{
         let city = {}
         let posts = []
-        axios.get('/datab/cities/1')
+        axios.get(`/datab/cities/${this.props.match.params.id}`)
         .then((response)=>{
             city = response.data
             console.log(response.data)
-            return axios.get('/datab/cities/1/posts')
+            return axios.get(`/datab/cities/${this.props.match.params.id}/posts`)
         })
         .then((responsePosts)=>{
             posts = responsePosts.data
@@ -36,9 +36,9 @@ class CityHomePage extends Component {
         })
     }
     render() {
-        const cityPostTextBox = this.state.posts.map((post)=>{
+        const cityPostTextBox = this.state.posts.map((post, i)=>{
             return (
-                <div>
+                <div key={i}>
                     {post.description}
                 </div>
             )
