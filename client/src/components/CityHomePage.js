@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const TopTitleBox = styled.div`
     display: grid;
-    grid-template-columns: 30vw 50vw 15vw;
+    grid-template-columns: 30vw 50vw 20vw;
     .newPostButton{
         
     }
@@ -43,6 +43,7 @@ class CityHomePage extends Component {
                 </div>
             )
         })
+        const newPostLinkAddress = `/cities/${this.props.match.params.id}/posts/new`
         return (
             <div>
                 <TopTitleBox>
@@ -55,7 +56,7 @@ class CityHomePage extends Component {
                     </div>
 
                     <button className="newPostButton">
-                        New Post
+                        <a href={newPostLinkAddress}>New Post</a>
                     </button>
                     
                     <div>
