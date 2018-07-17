@@ -8,14 +8,18 @@ const NavBar = styled.div`
     display: grid;
     grid-template-columns: 60vw 15vw 15vw;
     justify-content: space-between;
-    padding: 1vh 0; */
+    padding: 1vh 0; 
     .siteName{
         text-align: left;
         margin-left: 10vw;
-        font-weight: 900;
+        font-weight: bold;
         align-self: center;
     }
     border: 1px solid gray;
+    a {
+      font-size: larger;
+      align-self: center;
+    }
 `
 
 
