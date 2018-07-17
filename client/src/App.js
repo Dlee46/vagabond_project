@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import HomePage from './components/HomePage';
 import styled from 'styled-components'
 import CityHomePage from './components/CityHomePage';
+import NewPost from './components/NewPost';
 
 const NavBar = styled.div`
     min-height: 10vh;
@@ -36,19 +37,20 @@ class App extends Component {
         <CityHomePage {...props}/>
       )
     }
+
+    const PostsNewWrapper = (props) =>{
+      return (
+        <NewPost {...props}/>
+      )
+    }
+
     return ( 
       <Router>
         <div>
-          <NavBar>
-            <div className="siteName">
-              Travel Buddy
-            </div>
-            <Link to='/signup'>Sign Up</Link>
-            <Link to='/login'>Log In</Link>
-          </NavBar>
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route exact path='/cities/:id' render={CityHomePageWrapper}/>
+            <Route exact path='/cities/:id/posts/new/' render={PostsNewWrapper}/> 
           </Switch>
         </div>
       </Router>
