@@ -14,6 +14,9 @@ const SplashImage = styled.div`
 `
 const Content = styled.div`
 margin-top: 7vw;
+display: flex;
+flex-direction: column;
+align-items: center;
 `
 class HomePage extends Component {
     render() {
@@ -23,22 +26,15 @@ class HomePage extends Component {
                     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Atlanta_Downtown_Skyline.jpg" alt="" />
                 </SplashImage>
                 <Content>
-                    <Item.Group divided>
-                        <Item>
-                            <Item.Image size='tiny' src='/images/wireframe/image.png' />
-                            <Item.Content verticalAlign='middle'>Content A</Item.Content>
-                        </Item>
-
-                        <Item>
-                            <Item.Image size='tiny' src='/images/wireframe/image.png' />
-                            <Item.Content verticalAlign='middle'>Content B</Item.Content>
-                        </Item>
-
-                        <Item>
-                            <Item.Image size='tiny' src='/images/wireframe/image.png' />
-                            <Item.Content content='Content C' verticalAlign='middle' />
-                        </Item>
-                    </Item.Group>
+                    <div>
+                        <a href="" alt="">Atlanta</a>
+                    </div>
+                    <div>
+                        <a href="" alt="">London</a>
+                    </div>
+                    <div>
+                        <a href="" alt="">San Francisco</a>
+                    </div>
                 </Content>
             </div>
         );
