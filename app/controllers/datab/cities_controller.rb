@@ -1,6 +1,6 @@
 class Datab::CitiesController < ApplicationController
     def index
-        @cities = City.ApplicationController
+        @cities = City.all
         render json: @cities
     end
 
