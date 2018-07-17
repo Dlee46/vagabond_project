@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import { Card, Image } from 'semantic-ui-react'
+import NavBar from './NavBar'
 
 
 const SplashImage = styled.div`
@@ -42,6 +43,7 @@ class HomePage extends Component {
     render() {
         return (
             <div>
+                <NavBar />
                 <SplashImage>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Atlanta_Downtown_Skyline.jpg" alt="" />
                 </SplashImage>
