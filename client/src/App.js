@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import HomePage from './components/HomePage';
 import styled from 'styled-components'
+import CityHomePage from './components/CityHomePage';
 
 const NavBar = styled.div`
     min-height: 10vh;
@@ -37,6 +38,7 @@ class App extends Component {
           </NavBar>
           <Switch>
             <Route exact path='/' component={HomePage} />
+            <Route exact path='/cities/1' component={CityHomePage}/>
           </Switch>
         </div>
       </Router>

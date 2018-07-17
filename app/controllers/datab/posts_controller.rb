@@ -7,7 +7,7 @@ class Datab::PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
-        render json: @song
+        render json: @post
     end
 
     def create
