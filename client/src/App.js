@@ -30,6 +30,12 @@ const NavBar = styled.div`
 
 class App extends Component {
   render() {
+
+    const CityHomePageWrapper = (props) =>{
+      return (
+        <CityHomePage {...props}/>
+      )
+    }
     return ( 
       <Router>
         <div>
@@ -42,7 +48,7 @@ class App extends Component {
           </NavBar>
           <Switch>
             <Route exact path='/' component={HomePage} />
-            <Route exact path='/cities/1' component={CityHomePage}/>
+            <Route exact path='/cities/:id' render={CityHomePageWrapper}/>
           </Switch>
         </div>
       </Router>

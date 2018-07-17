@@ -36,7 +36,13 @@ class CityHomePage extends Component {
         })
     }
     render() {
-
+        const cityPostTextBox = this.state.posts.map((post)=>{
+            return (
+                <div>
+                    {post.description}
+                </div>
+            )
+        })
         return (
             <div>
                 <TopTitleBox>
@@ -51,6 +57,10 @@ class CityHomePage extends Component {
                     <button className="newPostButton">
                         New Post
                     </button>
+                    
+                    <div>
+                        {cityPostTextBox}
+                    </div>
                 </TopTitleBox>
             </div>
         );
