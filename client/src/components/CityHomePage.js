@@ -58,11 +58,16 @@ class CityHomePage extends Component {
                     <button className="newPostButton">
                         <a href={newPostLinkAddress}>New Post</a>
                     </button>
-                    
+                </TopTitleBox>
+
+                <div>
+                    <div>
+                        <img src={this.state.city.image}/>
+                    </div>
                     <div>
                         {cityPostTextBox}
                     </div>
-                </TopTitleBox>
+                </div>
             </div>
         );
     }
