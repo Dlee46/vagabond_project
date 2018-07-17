@@ -1,13 +1,13 @@
 class Datab::PostsController < ApplicationController
 
     def index
-        @posts = Post.find(params[:city_id]).posts
+        @posts = City.find(params[:city_id]).posts
         render json: @posts
     end
 
     def show
         @post = Post.find(params[:id])
-        render json: @song
+        render json: @post
     end
 
     def create
@@ -17,7 +17,7 @@ class Datab::PostsController < ApplicationController
     end
 
     def update
-        @post Post.find(params[:id])
+        @post = Post.find(params[:id])
         @post.update(post_params)
         render json: @post
     end
