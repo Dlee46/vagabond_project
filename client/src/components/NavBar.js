@@ -23,9 +23,6 @@ const NavBar = styled.div`
 
 class NavBar extends Component {
     render() {
-        const NavBarWrapper = (props) =>{
-
-          }
         return (
             <div>
                 <NavBar>

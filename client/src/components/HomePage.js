@@ -34,12 +34,11 @@ const Cardbox = styled.div`
 
 
 `
-const CardStyle = styled(Card)`
-&&&& {
-    height:100px;
-}
-`
+
 class HomePage extends Component {
+    state = {
+        showHomeView: true,
+    }
     render() {
         return (
             <div>
@@ -49,11 +48,11 @@ class HomePage extends Component {
                 <Content>
                     <Cardbox>
                         <Card>
-                            <Image src="https://secondcropcreative.com/perfectloops/images/chicago-timelapse.gif" height={200}   />
+                            <Image src="https://secondcropcreative.com/perfectloops/images/chicago-timelapse.gif" height={200} />
                             <a href="/cities/1" alt="">Atlanta</a>
                         </Card>
                     </Cardbox>
-                    
+
 
 
                     <Cardbox>
@@ -65,7 +64,7 @@ class HomePage extends Component {
 
                     <Cardbox>
                         <Card>
-                            <Image src="https://i.pinimg.com/originals/3c/76/ef/3c76ef5230967fe6ef22c07e126f4697.gif"   height = {200}/>
+                            <Image src="https://i.pinimg.com/originals/3c/76/ef/3c76ef5230967fe6ef22c07e126f4697.gif" height={200} />
                             <a href="" alt="">San Francisco</a>
                         </Card>
                     </Cardbox>
