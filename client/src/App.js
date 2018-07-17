@@ -6,26 +6,30 @@ import styled from 'styled-components'
 const NavBar = styled.div`
     min-height: 10vh;
     display: grid;
+    background-color: #009781;
     grid-template-columns: 60vw 15vw 15vw;
     justify-content: space-between;
     padding: 1vh 0; 
+    
     .siteName{
         text-align: left;
         margin-left: 10vw;
         font-weight: bold;
         align-self: center;
+        color:#f9f7ed;
     }
     border: 1px solid gray;
     a {
       font-size: larger;
       align-self: center;
+      color:#f9f7ed;
     }
 `
 
 
 class App extends Component {
   render() {
-    return (
+    return ( 
       <Router>
         <div>
           <NavBar>
