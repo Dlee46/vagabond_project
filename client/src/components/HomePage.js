@@ -6,10 +6,12 @@ import { Card, Image } from 'semantic-ui-react'
 const SplashImage = styled.div`
     margin-top: 6vh;
     
+    
     img{
         max-width: 100vw;
         min-height: 25vh;
         border: 1px solid black;
+        
     }
 `
 const Content = styled.div`
@@ -23,7 +25,7 @@ const Cardbox = styled.div`
  
  max-width: 100vw;
  min-height: 10vh;
- margin:10px;
+ margin:50px;
  box-shadow: 0px 57px 34px -40px rgba(0, 0, 0, 0.3), 0px 3px 40px 2px rgba(0, 0, 0, 0.2);
  a{
      align-self: center;
@@ -47,7 +49,7 @@ class HomePage extends Component {
                 <Content>
                     <Cardbox>
                         <Card>
-                            <Image src="https://secondcropcreative.com/perfectloops/images/chicago-timelapse.gif" height={200} />
+                            <Image src="https://secondcropcreative.com/perfectloops/images/chicago-timelapse.gif" height={200}   />
                             <a href="" alt="">Atlanta</a>
                         </Card>
                     </Cardbox>
