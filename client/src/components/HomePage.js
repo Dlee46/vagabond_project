@@ -27,7 +27,7 @@ class HomePage extends Component {
                 </SplashImage>
                 <Content>
                     <div>
-                        <a href="" alt="">Atlanta</a>
+                        <a href="/cities/1" alt="">Atlanta</a>
                     </div>
                     <div>
                         <a href="" alt="">London</a>
