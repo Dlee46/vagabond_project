@@ -20,7 +20,7 @@ class HomePage extends Component {
         return (
             <div>
                 <SplashImage>
-                    <img src="https://files.slack.com/files-pri/T0351JZQ0-FBR6F14GY/atlanta_downtown_skyline.jpg" alt="" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Atlanta_Downtown_Skyline.jpg" alt="" />
                 </SplashImage>
                 <Content>
                     <Item.Group divided>
