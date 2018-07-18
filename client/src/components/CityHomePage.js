@@ -28,7 +28,6 @@ class CityHomePage extends Component {
         axios.get(`/datab/cities/${this.props.match.params.id}`)
             .then((response) => {
                 city = response.data
-                console.log(response.data)
                 return axios.get(`/datab/cities/${this.props.match.params.id}/posts`)
             })
             .then((responsePosts) => {
@@ -65,7 +64,7 @@ class CityHomePage extends Component {
 
                 <div>
                     <div>
-                        <img src={this.state.city.image} />
+                        <img src={this.state.city.image} alt="" />
                     </div>
                     <div>
                         {cityPostTextBox}

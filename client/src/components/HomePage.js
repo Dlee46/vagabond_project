@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 import { Card, Image } from 'semantic-ui-react'
 import NavBar from './NavBar'
-import axios from 'axios'
 
 
 const SplashImage = styled.div`

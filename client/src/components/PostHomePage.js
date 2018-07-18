@@ -42,7 +42,6 @@ class PostHomePage extends Component {
     render() {
         const city = this.state.city
         const post = this.state.posts
-        console.log("Posts", post.id)
         return (
             <div>
                 <div>
