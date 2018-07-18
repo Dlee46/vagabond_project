@@ -4,11 +4,19 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const TopTitleBox = styled.div`
-    display: grid;
-    grid-template-columns: 30vw 50vw 20vw;
+    display: flex;
+    justify-content: space-around;
+    padding: 5%;
+    align-items: center;
     .newPostButton{
         
     }
+`
+const ImageAndPosts = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-spacing: 10%;
 `
 
 class CityHomePage extends Component {
@@ -40,7 +48,8 @@ class CityHomePage extends Component {
         const postState = this.state.posts.reverse()
         const cityPostTextBox = postState.map((post) => {
             return (
-                <div key={post.id}>
+
+                <div  className='postsForCity' key={post.id}>
                     <Link to={`/cities/${cityId}/posts/${post.id}`}>{post.title}</Link>
                 </div>
             )
@@ -50,26 +59,30 @@ class CityHomePage extends Component {
             <div>
                 <TopTitleBox>
                     <div>
-                        <h4>Travel Buddy</h4>
+                        <h4 className='logo'>Travel Buddy</h4>
                     </div>
 
                     <div>
-                        <h4>{this.state.city.name}</h4>
+                        <h4 className='cityName'>{this.state.city.name}</h4>
                     </div>
 
-                    <button className="newPostButton">
-                        <a href={newPostLinkAddress}>New Post</a>
-                    </button>
                 </TopTitleBox>
 
+                <ImageAndPosts>
                 <div>
-                    <div>
-                        <img src={this.state.city.image} alt="" />
-                    </div>
+
+
+                        <img className='cityPhoto' src={this.state.city.image} alt="" />
+
                     <div>
                         {cityPostTextBox}
                     </div>
                 </div>
+
+                <button className="newPostButton">
+                        <a className="newPostLink" href={newPostLinkAddress}>New Post</a>
+                </button>
+                </ImageAndPosts>
             </div>
         );
     }
