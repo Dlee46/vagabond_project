@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import styled from 'styled-components'
+
+const TopTitleBox = styled.div`
+    display: flex;
+    justify-content: space-around;
+    padding: 5%;
+    align-items: center;
+    .newPostButton{
+        
+    }
+`
 
 
 class PostHomePage extends Component {
@@ -70,11 +81,15 @@ class PostHomePage extends Component {
         const post = this.state.posts
         return (
             <div>
-
-                < div >
-                    <h4>Travel Buddy</h4>
-                    {city.name}
-                </div>
+                <TopTitleBox>
+                    < div className="logo">
+                        <h4>Travel Buddy</h4>
+                    </div>
+                    <div className="cityName">
+                        <h4>{city.name}</h4>
+                    </div>
+                </TopTitleBox>  
+                
                 <div>
                     {post.title}
                     {post.description}
