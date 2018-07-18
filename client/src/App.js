@@ -26,7 +26,9 @@ class App extends Component {
       )
     }
     const PostPageWrapper = (props) => {
-      <PostHomePage {...props} />
+      return (
+        <PostHomePage {...props} />
+      )
     }
 
     return (
@@ -35,8 +37,8 @@ class App extends Component {
           <Switch>
             <Route exact path='/' render={HomePageWrapper} />
             <Route exact path='/cities/:id' render={CityHomePageWrapper} />
-            <Route exact path='/cities/:cityId/posts/:id' render={PostPageWrapper} />
             <Route exact path='/cities/:id/posts/new/' render={PostsNewWrapper} />
+            <Route exact path='/cities/:cityid/posts/:id' render={PostPageWrapper} />
           </Switch>
         </div>
       </Router>

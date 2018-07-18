@@ -12,11 +12,12 @@ class PostHomePage extends Component {
     }
 
     fetchCityAndPostData = async () => {
-        const cityId = this.props.match.params.id
+        const cityId = this.props.match.params.cityid
+        const postId = this.props.match.params.id
+
         try {
             let cityRes = await axios.get(`/datab/cities/${cityId}`)
-            let postRes = await axios.get(`/datab/cities/${cityId}/posts`)
-            console.log(postRes)
+            let postRes = await axios.get(`/datab/cities/${cityId}/posts/${postId}`)
             this.setState({
                 city: cityRes.data,
                 posts: postRes.data
@@ -25,19 +26,32 @@ class PostHomePage extends Component {
             console.error(error)
         }
     }
+    deletePost = (postId) => {
+        const cityId = this.props.match.params.cityid
+        axios.delete(`/datab/cities/${cityId}/posts/${postId}`)
+            .then((res) => {
+                this.setState({
+                    city: res.data,
+                    posts: res.data
+                })
+                return (
+                    this.props.history.push(`/cities/${cityId}`)
+                )
+            })
+    }
     render() {
-        console.log(this.state.posts)
-        // const postInfo = this.state.posts.map((post) => {
-        //     return (
-        //         <div key={post.id}>
-        //             {post.title}
-        //             {post.description}
-        //         </div>
-        //     )
-        // })
+        const city = this.state.city
+        const post = this.state.posts
+        console.log("Posts", post.id)
         return (
             <div>
-                Hello World
+                <div>
+                    <h4>Travel Buddy</h4>
+                    {city.name}
+                </div>
+                {post.title}
+                {post.description}
+                <button onClick={() => { if (window.confirm(`Are you sure you want to delete ${post.title}?`)) this.deletePost(post.id) }}>Delete Post</button>
             </div>
         );
     }
