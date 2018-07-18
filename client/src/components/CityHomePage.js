@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const TopTitleBox = styled.div`
     display: flex;
@@ -21,33 +22,35 @@ const ImageAndPosts = styled.div`
 class CityHomePage extends Component {
 
     state = {
-        city:{},
+        city: {},
         posts: []
     }
 
-    componentDidMount=() =>{
+    componentDidMount = () => {
         this.fetchCityAndPostData()
     }
 
-    fetchCityAndPostData = () =>{
+    fetchCityAndPostData = () => {
         let city = {}
         let posts = []
         axios.get(`/datab/cities/${this.props.match.params.id}`)
-        .then((response)=>{
-            city = response.data
-            console.log(response.data)
-            return axios.get(`/datab/cities/${this.props.match.params.id}/posts`)
-        })
-        .then((responsePosts)=>{
-            posts = responsePosts.data
-            this.setState({city,posts})
-        })
+            .then((response) => {
+                city = response.data
+                return axios.get(`/datab/cities/${this.props.match.params.id}/posts`)
+            })
+            .then((responsePosts) => {
+                posts = responsePosts.data
+                this.setState({ city, posts })
+            })
     }
     render() {
-        const cityPostTextBox = this.state.posts.map((post, i)=>{
+        const cityId = this.props.match.params.id
+        const postState = this.state.posts
+        const cityPostTextBox = postState.map((post) => {
             return (
-                <div className='postsForCity' key={i}>
-                    {post.description}
+
+                <div  className='postsForCity' key={post.id}>
+                    <Link to={`/cities/${cityId}/posts/${post.id}`}>{post.title}</Link>
                 </div>
             )
         })
@@ -67,7 +70,10 @@ class CityHomePage extends Component {
 
                 <ImageAndPosts>
                 <div>
-                    <img className='cityPhoto' src={this.state.city.image}/>
+
+
+                        <img className='cityPhoto' src={this.state.city.image} alt="" />
+
                     <div>
                         {cityPostTextBox}
                     </div>

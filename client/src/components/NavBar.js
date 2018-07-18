@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const NavBarStyle = styled.div`
     min-height: 10vh;
@@ -27,7 +27,7 @@ class NavBar extends Component {
             <div>
                 <NavBarStyle>
                     <div className="siteName">
-                    Travel Buddy
+                        Travel Buddy
                     </div>
                     <Link to='/signup'>Sign Up</Link>
                     <Link to='/login'>Log In</Link>
