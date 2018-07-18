@@ -40,7 +40,21 @@ class CityHomePage extends Component {
             })
             .then((responsePosts) => {
                 posts = responsePosts.data
-                this.setState({ city, posts })
+                let trimmedPosts = posts.map((post)=>{
+                    if (post.description.length <1000){
+                        return post
+                    }
+                    else{
+                        let alteredPost = {}
+                        let alteredPostDescription = post.description.slice(0,999)
+                        alteredPostDescription = `${alteredPostDescription} ...`
+                        alteredPost.title = post.title
+                        alteredPost.description = alteredPostDescription
+                        return alteredPost
+                    }
+                
+                })
+                this.setState({ city, posts: trimmedPosts })
             })
     }
     render() {
@@ -48,10 +62,16 @@ class CityHomePage extends Component {
         const postState = this.state.posts.reverse()
         const cityPostTextBox = postState.map((post) => {
             return (
-
-                <div  className='postsForCity' key={post.id}>
+                <div key={post.id}>
+                    <div  className='postsForCity' >
                     <Link to={`/cities/${cityId}/posts/${post.id}`}>{post.title}</Link>
+                    </div>
+                    
+                    <div>
+                        {post.description}
+                    </div>
                 </div>
+                
             )
         })
         const newPostLinkAddress = `/cities/${this.props.match.params.id}/posts/new`
