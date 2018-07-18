@@ -43,13 +43,16 @@ class CityHomePage extends Component {
                 this.setState({ city, posts })
             })
     }
+    goBack = () => {
+        this.props.history.goBack()
+    }
     render() {
         const cityId = this.props.match.params.id
         const postState = this.state.posts.reverse()
         const cityPostTextBox = postState.map((post) => {
             return (
 
-                <div  className='postsForCity' key={post.id}>
+                <div className='postsForCity' key={post.id}>
                     <Link to={`/cities/${cityId}/posts/${post.id}`}>{post.title}</Link>
                 </div>
             )
@@ -69,20 +72,21 @@ class CityHomePage extends Component {
                 </TopTitleBox>
 
                 <ImageAndPosts>
-                <div>
+                    <div>
 
 
                         <img className='cityPhoto' src={this.state.city.image} alt="" />
 
-                    <div>
-                        {cityPostTextBox}
+                        <div>
+                            {cityPostTextBox}
+                        </div>
                     </div>
-                </div>
 
-                <button className="newPostButton">
+                    <button className="newPostButton">
                         <a className="newPostLink" href={newPostLinkAddress}>New Post</a>
-                </button>
+                    </button>
                 </ImageAndPosts>
+                <button onClick={() => this.goBack()}>Back</button>
             </div>
         );
     }
