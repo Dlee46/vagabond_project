@@ -10,7 +10,7 @@ class NewPost extends Component {
     }
 
     handleChangeInInputFields = (event) =>{
-        event.preventDefault
+        event.preventDefault()
         const inputField = event.target.name
         const newValue = event.target.value
         const alteredPost = {...this.state.post}
@@ -18,11 +18,13 @@ class NewPost extends Component {
         this.setState({post: alteredPost})
     }
     handleSubmitNewPost = (event)=>{
-        event.preventDefault
+        event.preventDefault()
         let newPost = this.state.post
         axios.post(`/datab/cities/${this.props.match.params.id}/posts`, newPost)
         .then((response)=>{
-            alert(response.data)
+            return (
+                this.props.history.push(`/cities/${this.props.match.params.id}/posts/${response.data.id}`)
+            )
         })
 
     }
