@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 import { Card, Image } from 'semantic-ui-react'
 import NavBar from './NavBar'
+import axios from 'axios'
 
 
 const SplashImage = styled.div`
@@ -37,9 +38,6 @@ const Cardbox = styled.div`
 `
 
 class HomePage extends Component {
-    state = {
-        showHomeView: true,
-    }
     render() {
         return (
             <div>
@@ -50,8 +48,10 @@ class HomePage extends Component {
                 <Content>
                     <Cardbox>
                         <Card>
-                            <Image src="https://secondcropcreative.com/perfectloops/images/chicago-timelapse.gif" height={200} />
-                            <a href="/cities/1" alt="">Atlanta</a>
+                            <a href="/cities/3" alt="">
+                                <Image src="https://secondcropcreative.com/perfectloops/images/chicago-timelapse.gif" height={200} />
+                                Atlanta
+                            </a>
                         </Card>
                     </Cardbox>
 
@@ -59,15 +59,19 @@ class HomePage extends Component {
 
                     <Cardbox>
                         <Card>
-                            <Image src=" https://static.wixstatic.com/media/92dd1d_f6e95de6a63c4021ba96391bcdf27a15~mv2_d_2560_1338_s_2.gif" height={200} />
-                            <a href="" alt="">London</a>
+                            <a href="" alt="">
+                                <Image src=" https://static.wixstatic.com/media/92dd1d_f6e95de6a63c4021ba96391bcdf27a15~mv2_d_2560_1338_s_2.gif" height={200} />
+                                London
+                            </a>
                         </Card>
                     </Cardbox>
 
                     <Cardbox>
                         <Card>
-                            <Image src="https://i.pinimg.com/originals/3c/76/ef/3c76ef5230967fe6ef22c07e126f4697.gif" height={200} />
-                            <a href="" alt="">San Francisco</a>
+                            <a href="" alt="">
+                                <Image src="https://i.pinimg.com/originals/3c/76/ef/3c76ef5230967fe6ef22c07e126f4697.gif" height={200} />
+                                San Francisco
+                            </a>
                         </Card>
                     </Cardbox>
 
