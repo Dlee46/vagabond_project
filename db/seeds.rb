@@ -19,3 +19,4 @@ post2 = atlanta.posts.create(title: "Mid Town", description: "Bougie")
 post3 = atlanta.posts.create(title: "Umi", description: "Bougie sushi place in Buckhead")
 post4 = atlanta.posts.create(title: "Chops", description: "Bougie steak place in Buckhead")
 post5 = atlanta.posts.create(title: "Ponce City Market", description: "Modern area with cool shops")
+
