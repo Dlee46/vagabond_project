@@ -48,7 +48,7 @@ class HomePage extends Component {
                 <Content>
                     <Cardbox>
                         <Card>
-                            <a href="/cities/3" alt="">
+                            <a href="/cities/1" alt="">
                                 <Image src="https://secondcropcreative.com/perfectloops/images/chicago-timelapse.gif" height={200} />
                                 Atlanta
                             </a>
