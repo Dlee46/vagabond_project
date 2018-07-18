@@ -2,5 +2,50 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #f9f7ed;
+  background-color: whitesmoke;
+}
+
+.cityPhoto{
+  width: 100vw;
+  height: auto;
+
+}
+
+.postsForCity{
+  padding: 5%;
+  margin: 2% 5% 0% 0%;
+  width: 100vw;
+  border:solid;
+  border-color: lightgrey;
+  border-width: 1px;
+  font-size: 15px;
+}
+
+.postsForCity:hover{
+  box-shadow: 3px 3px 3px lightgray;
+  color: orangered;
+}
+
+.logo{
+  font-size: 25px;
+  color: teal;
+}
+
+.cityName{
+  font-style: italic;
+  color: orangered;
+  font-size: 15px;
+}
+
+.newPostButton{
+  background-color: orangered;
+  height: 45px;
+  width: 100px;
+  border-radius: 5%;
+  margin-top: 4%;
+}
+
+.newPostLink{
+  color: white;
+  font-size: 15px;
 }
