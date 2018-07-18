@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import HomePage from './components/HomePage';
 import CityHomePage from './components/CityHomePage';
 import NewPost from './components/NewPost';
+import PostHomePage from './components/PostHomePage';
 
 
 
@@ -24,6 +25,11 @@ class App extends Component {
         <NewPost {...props} />
       )
     }
+    const PostPageWrapper = (props) => {
+      return (
+        <PostHomePage {...props} />
+      )
+    }
 
     return (
       <Router>
@@ -32,6 +38,7 @@ class App extends Component {
             <Route exact path='/' render={HomePageWrapper} />
             <Route exact path='/cities/:id' render={CityHomePageWrapper} />
             <Route exact path='/cities/:id/posts/new/' render={PostsNewWrapper} />
+            <Route exact path='/cities/:cityid/posts/:id' render={PostPageWrapper} />
           </Switch>
         </div>
       </Router>

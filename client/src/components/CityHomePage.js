@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const TopTitleBox = styled.div`
     display: grid;
@@ -36,10 +37,12 @@ class CityHomePage extends Component {
             })
     }
     render() {
-        const cityPostTextBox = this.state.posts.map((post, i) => {
+        const cityId = this.props.match.params.id
+        const postState = this.state.posts
+        const cityPostTextBox = postState.map((post) => {
             return (
-                <div key={i}>
-                    {post.description}
+                <div key={post.id}>
+                    <Link to={`/cities/${cityId}/posts/${post.id}`}>{post.title}</Link>
                 </div>
             )
         })
