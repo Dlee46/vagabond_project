@@ -13,32 +13,32 @@ const TopTitleBox = styled.div`
 class CityHomePage extends Component {
 
     state = {
-        city:{},
+        city: {},
         posts: []
     }
 
-    componentDidMount=() =>{
+    componentDidMount = () => {
         this.fetchCityAndPostData()
     }
 
-    fetchCityAndPostData = () =>{
+    fetchCityAndPostData = () => {
         let city = {}
         let posts = []
-        axios.get('/datab/cities/1')
-        .then((response)=>{
-            city = response.data
-            console.log(response.data)
-            return axios.get('/datab/cities/1/posts')
-        })
-        .then((responsePosts)=>{
-            posts = responsePosts.data
-            this.setState({city,posts})
-        })
+        axios.get(`/datab/cities/${this.props.match.params.id}`)
+            .then((response) => {
+                city = response.data
+                console.log(response.data)
+                return axios.get(`/datab/cities/${this.props.match.params.id}/posts`)
+            })
+            .then((responsePosts) => {
+                posts = responsePosts.data
+                this.setState({ city, posts })
+            })
     }
     render() {
-        const cityPostTextBox = this.state.posts.map((post)=>{
+        const cityPostTextBox = this.state.posts.map((post, i) => {
             return (
-                <div>
+                <div key={i}>
                     {post.description}
                 </div>
             )
@@ -62,7 +62,7 @@ class CityHomePage extends Component {
 
                 <div>
                     <div>
-                        <img src={this.state.city.image}/>
+                        <img src={this.state.city.image} />
                     </div>
                     <div>
                         {cityPostTextBox}

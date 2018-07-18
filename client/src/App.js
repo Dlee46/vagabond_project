@@ -8,28 +8,30 @@ import NewPost from './components/NewPost';
 
 class App extends Component {
   render() {
-    const HomePageWrapper = (props) => (
-      <HomePage {...props} />
-    )
+    const HomePageWrapper = (props) => {
+      return (
+        <HomePage {...props} />
+      )
+    }
 
     const CityHomePageWrapper = (props) => {
       return (
         <CityHomePage {...props} />
       )
     }
-    const PostsNewWrapper = (props) =>{
+    const PostsNewWrapper = (props) => {
       return (
-        <NewPost {...props}/>
+        <NewPost {...props} />
       )
     }
 
-    return ( 
+    return (
       <Router>
         <div>
           <Switch>
-            <Route exact path='/' component={HomePage} />
-            <Route exact path='/cities/:id' render={CityHomePageWrapper}/>
-            <Route exact path='/cities/:id/posts/new/' render={PostsNewWrapper}/> 
+            <Route exact path='/' render={HomePageWrapper} />
+            <Route exact path='/cities/:id' render={CityHomePageWrapper} />
+            <Route exact path='/cities/:id/posts/new/' render={PostsNewWrapper} />
           </Switch>
         </div>
       </Router>
