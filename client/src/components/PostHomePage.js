@@ -28,6 +28,9 @@ class PostHomePage extends Component {
             showEdit: editPost
         })
     }
+    goBack = () => {
+        this.props.history.goBack()
+    }
     fetchCityAndPostData = async () => {
         const cityId = this.props.match.params.cityid
         const postId = this.props.match.params.id
@@ -132,6 +135,7 @@ class PostHomePage extends Component {
                         }
                     </button>
                 </div>
+                <button onClick={() => this.goBack()}>Back</button>
             </div >
         );
     }
