@@ -37,7 +37,7 @@ class CityHomePage extends Component {
     }
     render() {
         const cityId = this.props.match.params.id
-        const postState = this.state.posts
+        const postState = this.state.posts.reverse()
         const cityPostTextBox = postState.map((post) => {
             return (
                 <div key={post.id}>
