@@ -1,16 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import styled from 'styled-components'
 
-const TopTitleBox = styled.div`
-    display: flex;
-    justify-content: space-around;
-    padding: 5%;
-    align-items: center;
-    .newPostButton{
-        
-    }
-`
 
 
 class PostHomePage extends Component {
@@ -83,20 +73,20 @@ class PostHomePage extends Component {
         const city = this.state.city
         const post = this.state.posts
         return (
-            <div>
-                <TopTitleBox>
-                    < div className="logo">
-                        <h4>Travel Buddy</h4>
-                    </div>
-                    <div className="cityName">
-                        <h4>{city.name}</h4>
-                    </div>
-                </TopTitleBox>  
-                
-                <div>
+            
+            <div className='postPageContainer'>   
+
+            <div className='logoHeader'>
+                <h4 className='logo'>Travel Buddy</h4>
+                <h4 className='cityName'>{this.state.city.name}</h4>
+            </div>
+
+                <div className='confirmationPost'>
+                    <h4 className='smallTitle'>Your title is:</h4>
                     {post.title}
+                    <br/>
+                    <h4 className='smallTitle'>Your description is:</h4>
                     {post.description}
-                    <button onClick={() => { if (window.confirm(`Are you sure you want to delete ${post.title}?`)) this.deletePost(post.id) }}>Delete Post</button>
                 </div>
 
                 {
@@ -127,15 +117,17 @@ class PostHomePage extends Component {
                         </div>
                         : null
                 }
-                <div>
-                    <button onClick={this.handleToggle}>
+                <div className='containsButtons'>
+                    <button className='newPostButton' onClick={() => { if (window.confirm(`Are you sure you want to delete ${post.title}?`)) this.deletePost(post.id) }}>Delete Post</button>
+
+                    <button className='newPostButton' onClick={this.handleToggle}>
                         {this.state.showEdit
                             ? 'Finished'
                             : 'Edit Post'
                         }
                     </button>
                 </div>
-                <button onClick={() => this.goBack()}>Back</button>
+                <button className='backButton' onClick={() => this.goBack()}>Back</button>
             </div >
         );
     }
