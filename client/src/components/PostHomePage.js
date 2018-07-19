@@ -86,14 +86,16 @@ class PostHomePage extends Component {
                     <Link to='/'><h4 className='logo'>Travel Buddy</h4></Link>
                     <Link to={cityAddress} className='cityName'>{city.name}</Link>
                 </div>
-
-                <div className='confirmationPost'>
-                    <h4 className='smallTitle'>Your title is:</h4>
-                    {post.title}
-                    <br />
-                    <h4 className='smallTitle'>Your description is:</h4>
-                    {post.description}
-                </div>
+                {!this.state.showEdit ?
+                    <div className='confirmationPost'>
+                        <h4 className='smallTitle'>Your title is:</h4>
+                        {post.title}
+                        <br />
+                        <h4 className='smallTitle'>Your description is:</h4>
+                        {post.description}
+                    </div>
+                    : null
+                }
                 {
                     this.state.showEdit ?
                         <div>
