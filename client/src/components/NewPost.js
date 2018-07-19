@@ -1,5 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import styled from 'styled-components'
+
+const NewPostPage = styled.div`
+    display: flex;
+    justify-content: space-around;
+    padding: 5%;
+    align-items: center;
+    text-align: center;
+    .newPostButton{
+        
+    }
+`
+
 class NewPost extends Component {
 
     state = {
@@ -17,6 +30,7 @@ class NewPost extends Component {
         alteredPost[inputField] = newValue
         this.setState({post: alteredPost})
     }
+
     handleSubmitNewPost = (event)=>{
         event.preventDefault()
         let newPost = this.state.post
@@ -30,27 +44,34 @@ class NewPost extends Component {
     }
     render() {
         return (
-            <div>
-                <h2 className=''>New Post</h2>
+          <NewPostPage>
+            <div className='newPostPage'>
+                <h4 className='logo'>Travel Buddy</h4>
+                <h2 className='pageTitle'>New Post</h2>
+
                 <form onSubmit={this.handleSubmitNewPost}> 
                         <div>
-                        <label>Post Title:</label>
-                        <input
+                        <label className='descriptiveTitle' >Post Title</label>
+                        <br/>
+                        <input className='titleField'
                         type="string"
                         name="title"
                         onChange={this.handleChangeInInputFields}
                         />
 
                         </div>
+                        <br/>
 
-                        <div>
-                            <label>Post Description:</label>
-                            <textarea name="description" onChange={this.handleChangeInInputFields}> 
+                        <div className='descriptionContainer'>
+                            <label className='descriptiveTitle' >Post Description</label>
+                            <br/>
+                            <textarea className='descriptionBox' name="description" onChange={this.handleChangeInInputFields}> 
                             </textarea>
                         </div>
-                        <button type="submit">Save Changes</button>
+                        <button className='newPostButton' type="submit">Save Changes</button>
                         </form>
             </div>
+            </NewPostPage>
         );
     }
 }

@@ -10,10 +10,11 @@ class NavBar extends Component {
     render() {
         return (
             <div className='navBarStyle'>
-                <h4 className='logo'>Travel Buddy</h4>
+                <h4 className='logo'>Travel Buddy</h4> 
                 <div>
-                    <Button className='newPostButton'><Link className='newPostLink' to='/signup'>Sign Up</Link></Button>
-                    <Button className='newPostButton'><Link className='newPostLink' to='/login'>Log In</Link></Button>
+                    <button className='newPostButton'><Link className='newPostLink' to='/signup'>Sign Up</Link></button>
+                    <button className='newPostButton'><Link className='newPostLink' to='/login'>Log In</Link></button>
+
                 </div>
             </div>
         );
