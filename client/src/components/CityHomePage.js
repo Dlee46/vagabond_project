@@ -123,7 +123,7 @@ class CityHomePage extends Component {
                         <a className="newPostLink" href={newPostLinkAddress}>New Post</a>
                     </button>
                 </ImageAndPosts>
-                <button onClick={() => this.goBack()}>Back</button>
+                <button className="backButton" onClick={() => this.goBack()}>Back</button>
             </div>
         );
     }

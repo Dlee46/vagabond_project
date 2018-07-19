@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
-import { Card, Image } from 'semantic-ui-react'
+import { Card, Image,Button } from 'semantic-ui-react'
 import NavBar from './NavBar'
 
 
@@ -29,8 +29,11 @@ const Cardbox = styled.div`
  margin:50px;
  box-shadow: 0px 57px 34px -40px rgba(0, 0, 0, 0.3), 0px 3px 40px 2px rgba(0, 0, 0, 0.2);
  a{
-     align-self: center;
+    margin:auto;
  }
+     
+
+ 
  
 
 
@@ -47,8 +50,9 @@ class HomePage extends Component {
                 <Content>
                     <Cardbox>
                         <Card>
+                            <Image src="https://secondcropcreative.com/perfectloops/images/chicago-timelapse.gif" height={200} />
                             <a href="/cities/1" alt="">
-                                <Image src="https://secondcropcreative.com/perfectloops/images/chicago-timelapse.gif" height={200} />
+                                
                                 Atlanta
                             </a>
                         </Card>
@@ -68,7 +72,7 @@ class HomePage extends Component {
                     <Cardbox>
                         <Card>
                             <a href="" alt="">
-                                <Image src="https://i.pinimg.com/originals/3c/76/ef/3c76ef5230967fe6ef22c07e126f4697.gif" height={200} />
+                                <Image src="http://25.media.tumblr.com/e8a707159978b438ceb551a23bb2d692/tumblr_mszcndDLUl1rkpy56o1_500.gif" height={200} />
                                 San Francisco
                             </a>
                         </Card>
