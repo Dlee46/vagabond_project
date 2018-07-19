@@ -3,7 +3,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: whitesmoke;
+
+
+
+
 }
 
 .cityPhoto{
@@ -72,7 +75,9 @@ body {
 .logo{
   font-size:40px;
   margin-bottom: 20px;
-  font-family: fantasy;
+  
+
+  
 
 }
 

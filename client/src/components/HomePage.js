@@ -5,11 +5,11 @@ import NavBar from './NavBar'
 
 
 const SplashImage = styled.div`
-    margin-top: 6vh;
+    
     
     
     img{
-        max-width: 100vw;
+        max-width: 200vw;
         min-height: 25vh;
         border: 1px solid black;
         
@@ -23,15 +23,13 @@ flex-direction: column;
 align-items: center;
 `
 const Cardbox = styled.div`
- 
+ text-align: center;
+ font-size: 20px;
  max-width: 100vw;
  min-height: 10vh;
  margin:50px;
  box-shadow: 0px 57px 34px -40px rgba(0, 0, 0, 0.3), 0px 3px 40px 2px rgba(0, 0, 0, 0.2);
- a{
-    margin:auto;
- }
-     
+
 
  
  
@@ -45,7 +43,7 @@ class HomePage extends Component {
             <div>
                 <NavBar />
                 <SplashImage>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Atlanta_Downtown_Skyline.jpg" alt="" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Atlanta_Downtown_Skyline.jpg" height={250} />
                 </SplashImage>
                 <Content>
                     <Cardbox>
@@ -62,9 +60,10 @@ class HomePage extends Component {
 
                     <Cardbox>
                         <Card>
+                            
                             <a href="" alt="">
                                 <Image src=" https://static.wixstatic.com/media/92dd1d_f6e95de6a63c4021ba96391bcdf27a15~mv2_d_2560_1338_s_2.gif" height={200} />
-                                London
+                               London
                             </a>
                         </Card>
                     </Cardbox>
