@@ -121,7 +121,7 @@ class CityHomePage extends Component {
                 </ImageAndPosts>
                 <BottomNavBar>
                     <div>
-                        <button className="backButton" onClick={() => this.goBack()}>Back</button>
+                        <button className="newPostButton" onClick={() => this.goBack()}>Back</button>
                     </div>
                     <div>
                         <button className="newPostButton">
@@ -129,7 +129,6 @@ class CityHomePage extends Component {
                         </button>
                     </div>
                 </BottomNavBar>
-
             </div>
         );
     }
