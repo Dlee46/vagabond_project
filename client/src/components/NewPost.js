@@ -31,7 +31,7 @@ class NewPost extends Component {
     render() {
         return (
             <div>
-                <h2>New Post</h2>
+                <h2 className=''>New Post</h2>
                 <form onSubmit={this.handleSubmitNewPost}> 
                         <div>
                         <label>Post Title:</label>
