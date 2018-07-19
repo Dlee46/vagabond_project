@@ -90,10 +90,9 @@ class CityHomePage extends Component {
                 <div key={post.id}>
                     <div  className='postsForCity' >
 
-                    <Link to={`/cities/${cityId}/posts/${post.id}`}>{post.title}</Link>
-                    </div>
-                    
-                    <div>
+
+                        <Link className='linksForPosts' to={`/cities/${cityId}/posts/${post.id}`}>{post.title}</Link>
+                        <br/>
                         {post.description}
                     </div>
                 </div>
@@ -119,9 +118,10 @@ class CityHomePage extends Component {
                         </div>
                     </div>
                 </ImageAndPosts>
+
                 <BottomNavBar>
                     <div>
-                        <button className="backButton" onClick={() => this.goBack()}>Back</button>
+                        <button className="newPostButton" onClick={() => this.goBack()}>Back</button>
                     </div>
                     <div>
                         <button className="newPostButton">
@@ -129,7 +129,6 @@ class CityHomePage extends Component {
                         </button>
                     </div>
                 </BottomNavBar>
-
             </div>
         );
     }
