@@ -18,6 +18,7 @@ body {
   border-color: lightgrey;
   border-width: 1px;
   font-size: 15px;
+  word-wrap: break-word;
 }
 
 .linksForPosts:hover{
