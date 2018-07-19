@@ -67,7 +67,7 @@ class PostHomePage extends Component {
         axios.patch(`/datab/cities/${cityId}/posts/${postId}`, newPost)
             .then((response) => {
                 this.setState({
-                    post: response.data
+                    posts: response.data
                 })
             })
 
@@ -117,7 +117,7 @@ class PostHomePage extends Component {
                                         onChange={this.handleChangeInInputFields}>
                                     </textarea>
                                 </div>
-                                <button type="submit">Update Changes</button>
+                                <button className="newPostButton" type="submit">Update Changes</button>
                             </form>
                         </div>
                         : null
