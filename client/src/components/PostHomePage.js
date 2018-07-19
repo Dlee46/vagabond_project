@@ -79,32 +79,21 @@ class PostHomePage extends Component {
         const cityAddress = `/cities/${cityId}`
         return (
 
-            
-            <div className='postPageContainer'>   
 
-            <div className='logoHeader'>
-                <Link to='/'><h4 className='logo'>Travel Buddy</h4></Link>
-                <Link to={cityAddress} className='cityName'>{city.name}</Link>
-            </div>
+            <div className='postPageContainer'>
+
+                <div className='logoHeader'>
+                    <Link to='/'><h4 className='logo'>Travel Buddy</h4></Link>
+                    <Link to={cityAddress} className='cityName'>{city.name}</Link>
+                </div>
 
                 <div className='confirmationPost'>
                     <h4 className='smallTitle'>Your title is:</h4>
                     {post.title}
-                    <br/>
+                    <br />
                     <h4 className='smallTitle'>Your description is:</h4>
                     {post.description}
                 </div>
-
-
-                </TopTitleBox>
-                {!this.state.showEdit ?
-                    <div>
-                        {post.title}
-                        {post.description}
-                        <button onClick={() => { if (window.confirm(`Are you sure you want to delete ${post.title}?`)) this.deletePost(post.id) }}>Delete Post</button>
-                    </div>
-                    : null
-                }
                 {
                     this.state.showEdit ?
                         <div>
