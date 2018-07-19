@@ -62,6 +62,14 @@ class CityHomePage extends Component {
                 posts = responsePosts.data
                 let trimmedPosts = posts.map((post) => {
                     if (post.description.length < 1000) {
+                        let today = new Date()
+                        let todayDateTime = today.getTime()
+                        let postCreateDateTime = Date.parse(post.created_at)
+                        // found on stack overflow: https://stackoverflow.com/questions/47274037/finding-number-of-days-between-two-dates-in-javascript-redu         
+                        let timeDiff = Math.abs(todayDateTime - postCreateDateTime)
+                        let datesDiff = Math.floor(timeDiff / (1000 * 3600 * 24))
+                        console.log(datesDiff)
+                        post.ageOfPost = datesDiff
                         return post
                     }
                     else {
@@ -70,6 +78,13 @@ class CityHomePage extends Component {
                         alteredPostDescription = `${alteredPostDescription} ...`
                         alteredPost.title = post.title
                         alteredPost.description = alteredPostDescription
+                        let today = new Date()
+                        let todayDateTime = today.getTime()
+                        let alteredPostCreateDateTime = Date.parse(post.created_at)
+                        let timeDiff = Math.abs(todayDateTime - alteredPostCreateDateTime)
+                        let datesDiff = Math.floor(timeDiff / (1000 * 3600 * 24))
+                        console.log(datesDiff)
+                        alteredPost.ageOfPost = datesDiff
                         return alteredPost
                     }
 
