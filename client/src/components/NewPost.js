@@ -8,9 +8,24 @@ const NewPostPage = styled.div`
     padding: 5%;
     align-items: center;
     text-align: center;
-    .newPostButton{
-        
+    input{
+        border: 1px solid black;
     }
+    textarea{
+        border: 1px solid black;
+    }
+`
+
+const BottomNavBar = styled.div`
+    z-index: 10000;
+    position: fixed;
+    background-color: rgb(249 247 247);
+    bottom: 0px;
+    width:100%;
+    div{
+        text-align: center;
+    }
+    margin-left: -40px;
 `
 
 class NewPost extends Component {
@@ -42,6 +57,9 @@ class NewPost extends Component {
         })
 
     }
+    goBack = () => {
+        this.props.history.goBack()
+    }
     render() {
         return (
 
@@ -71,6 +89,9 @@ class NewPost extends Component {
                         </div>
                         <button className='newPostButton' type="submit">Save Changes</button>
                         </form>
+                        <BottomNavBar>
+                            <button className="backButton" onClick={() => this.goBack()}>Back</button>
+                        </BottomNavBar>
             </div>
             </NewPostPage>
         );
