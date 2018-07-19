@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
-import { Card, Image,Button } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 import NavBar from './NavBar'
 import axios from 'axios'
 

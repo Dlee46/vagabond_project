@@ -60,19 +60,19 @@ class CityHomePage extends Component {
             })
             .then((responsePosts) => {
                 posts = responsePosts.data
-                let trimmedPosts = posts.map((post)=>{
-                    if (post.description.length <1000){
+                let trimmedPosts = posts.map((post) => {
+                    if (post.description.length < 1000) {
                         return post
                     }
-                    else{
+                    else {
                         let alteredPost = {}
-                        let alteredPostDescription = post.description.slice(0,999)
+                        let alteredPostDescription = post.description.slice(0, 999)
                         alteredPostDescription = `${alteredPostDescription} ...`
                         alteredPost.title = post.title
                         alteredPost.description = alteredPostDescription
                         return alteredPost
                     }
-                
+
                 })
                 this.setState({ city, posts: trimmedPosts })
             })
@@ -88,16 +88,16 @@ class CityHomePage extends Component {
             return (
 
                 <div key={post.id}>
-                    <div  className='postsForCity' >
+                    <div className='postsForCity' >
 
-                    <Link to={`/cities/${cityId}/posts/${post.id}`}>{post.title}</Link>
+                        <Link to={`/cities/${cityId}/posts/${post.id}`}>{post.title}</Link>
                     </div>
-                    
+
                     <div>
                         {post.description}
                     </div>
                 </div>
-                
+
             )
         })
         const newPostLinkAddress = `/cities/${this.props.match.params.id}/posts/new`
@@ -121,7 +121,7 @@ class CityHomePage extends Component {
                 </ImageAndPosts>
                 <BottomNavBar>
                     <div>
-                        <button className="backButton" onClick={() => this.goBack()}>Back</button>
+                        <button className="newPostButton" onClick={() => this.goBack()}>Back</button>
                     </div>
                     <div>
                         <button className="newPostButton">
