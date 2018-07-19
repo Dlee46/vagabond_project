@@ -2,7 +2,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: whitesmoke;
+
+
+
+
 }
 
 .cityPhoto{
@@ -100,6 +103,11 @@ border: none;
 
 .newPostPage{
   width: 80vw;
+}
+
+.logo{
+  font-size:40px;
+  margin-bottom: 20px;
 }
 
 .postPageContainer{
