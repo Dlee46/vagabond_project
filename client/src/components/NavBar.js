@@ -24,14 +24,16 @@ const NavBarStyle = styled.div`
 class NavBar extends Component {
     render() {
         return (
+
             <div>
                 <NavBarStyle>
                     <div className="siteName">
                         Travel Buddy
                     </div>
-                    <Link to='/signup'>Sign Up</Link>
-                    <Link to='/login'>Log In</Link>
+                    <button className='newPostButton'><Link className='newPostLink' to='/signup'>Sign Up</Link></button>
+                    <button className='newPostButton'><Link className='newPostLink' to='/login'>Log In</Link></button>
                 </NavBarStyle>
+
             </div>
         );
     }
