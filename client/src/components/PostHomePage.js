@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const TopTitleBox = styled.div`
     display: flex;
@@ -82,23 +83,28 @@ class PostHomePage extends Component {
     render() {
         const city = this.state.city
         const post = this.state.posts
+        const cityId = this.props.match.params.cityid
+        const cityAddress = `/cities/${cityId}`
         return (
             <div>
                 <TopTitleBox>
-                    < div className="logo">
-                        <h4>Travel Buddy</h4>
+                    <div>
+                        <Link to='/' className='logo'><h4>Travel Buddy</h4></Link>
                     </div>
-                    <div className="cityName">
-                        <h4>{city.name}</h4>
-                    </div>
-                </TopTitleBox>  
-                
-                <div>
-                    {post.title}
-                    {post.description}
-                    <button onClick={() => { if (window.confirm(`Are you sure you want to delete ${post.title}?`)) this.deletePost(post.id) }}>Delete Post</button>
-                </div>
 
+                    <div>
+                        <Link to={cityAddress} className='cityName'>{city.name}</Link>
+                    </div>
+
+                </TopTitleBox>
+                {!this.state.showEdit ?
+                    <div>
+                        {post.title}
+                        {post.description}
+                        <button onClick={() => { if (window.confirm(`Are you sure you want to delete ${post.title}?`)) this.deletePost(post.id) }}>Delete Post</button>
+                    </div>
+                    : null
+                }
                 {
                     this.state.showEdit ?
                         <div>
@@ -134,8 +140,8 @@ class PostHomePage extends Component {
                             : 'Edit Post'
                         }
                     </button>
+                    <button onClick={() => this.goBack()}>Back</button>
                 </div>
-                <button onClick={() => this.goBack()}>Back</button>
             </div >
         );
     }
