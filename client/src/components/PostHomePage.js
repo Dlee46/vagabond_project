@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -72,13 +75,16 @@ class PostHomePage extends Component {
     render() {
         const city = this.state.city
         const post = this.state.posts
+        const cityId = this.props.match.params.cityid
+        const cityAddress = `/cities/${cityId}`
         return (
+
             
             <div className='postPageContainer'>   
 
             <div className='logoHeader'>
-                <h4 className='logo'>Travel Buddy</h4>
-                <h4 className='cityName'>{this.state.city.name}</h4>
+                <Link to='/'><h4 className='logo'>Travel Buddy</h4></Link>
+                <Link to={cityAddress} className='cityName'>{city.name}</Link>
             </div>
 
                 <div className='confirmationPost'>
@@ -89,6 +95,16 @@ class PostHomePage extends Component {
                     {post.description}
                 </div>
 
+
+                </TopTitleBox>
+                {!this.state.showEdit ?
+                    <div>
+                        {post.title}
+                        {post.description}
+                        <button onClick={() => { if (window.confirm(`Are you sure you want to delete ${post.title}?`)) this.deletePost(post.id) }}>Delete Post</button>
+                    </div>
+                    : null
+                }
                 {
                     this.state.showEdit ?
                         <div>
@@ -126,8 +142,11 @@ class PostHomePage extends Component {
                             : 'Edit Post'
                         }
                     </button>
+
                 </div>
+
                 <button className='backButton' onClick={() => this.goBack()}>Back</button>
+
             </div >
         );
     }

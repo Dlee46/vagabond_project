@@ -44,10 +44,11 @@ class NewPost extends Component {
     }
     render() {
         return (
-            <NewPostPage>
+          <NewPostPage>
             <div className='newPostPage'>
                 <h4 className='logo'>Travel Buddy</h4>
                 <h2 className='pageTitle'>New Post</h2>
+
                 <form onSubmit={this.handleSubmitNewPost}> 
                         <div>
                         <label className='descriptiveTitle' >Post Title</label>

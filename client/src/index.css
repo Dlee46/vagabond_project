@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   padding: 0;
@@ -8,6 +9,8 @@ body {
 .cityPhoto{
   width: 100vw;
   height: auto;
+  
+  
 
 }
 
@@ -51,7 +54,6 @@ body {
   height: 45px;
   width: 100px;
   border-radius: 5%;
-  margin-top: 4%;
 }
 
 .newPostLink{
@@ -69,6 +71,7 @@ body {
 .pageTitle{
   color: orangered;
 }
+
 
 .backButton{
   background-color: teal;
@@ -142,3 +145,4 @@ border: none;
   font-size: 20px;
   color: teal;
 }
+
