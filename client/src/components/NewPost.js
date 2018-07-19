@@ -78,9 +78,6 @@ class NewPost extends Component {
             <NewPostPage>
                 <TopTitleBox>
                     <div>
-                        <h2 className='pageTitle'>New Post</h2>
-                    </div>
-                    <div>
                         <h4 className='logo'>Travel Buddy</h4>
                     </div>
                 </TopTitleBox>
@@ -88,6 +85,7 @@ class NewPost extends Component {
 
                     <form onSubmit={this.handleSubmitNewPost}>
                         <div className='newPostForm' >
+                            <h2 className='pageTitle'>New Post</h2>
                             <label className='descriptiveTitle' >Post Title</label>
                             <br />
                             <input className='titleField'
