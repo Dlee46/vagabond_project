@@ -14,9 +14,6 @@ const TopTitleBox = styled.div`
     width:100%;
     background-color: rgb(249 247 247);
     box-shadow: .2px .2px .2px .2px;
-    .newPostButton{
-        
-    }
 `
 const ImageAndPosts = styled.div`
     margin-top: 70px;

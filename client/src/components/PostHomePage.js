@@ -4,8 +4,31 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 
-
-
+const BottomNavBar = styled.div`
+    display: grid;
+    grid-template-columns: 40fr 40fr;
+    justify-content: space-around;
+    z-index: 10000;
+    position: fixed;
+    background-color: rgb(249 247 247);
+    bottom: 0px;
+    width:100%;
+    div{
+        text-align: center;
+    }
+`
+const TopTitleBox = styled.div`
+display: flex;
+justify-content: space-around;
+padding: 5%;
+align-items: center;
+z-index: 10000;
+position: fixed;
+top: 0px;
+width:100%;
+background-color: rgb(249 247 247);
+box-shadow: .2px .2px .2px .2px;
+`
 class PostHomePage extends Component {
     state = {
         city: {},
@@ -83,8 +106,14 @@ class PostHomePage extends Component {
             <div className='postPageContainer'>
 
                 <div className='logoHeader'>
-                    <Link to='/'><h4 className='logo'>Travel Buddy</h4></Link>
-                    <Link to={cityAddress} className='cityName'>{city.name}</Link>
+                    <TopTitleBox>
+                        <div>
+                            <Link to='/' className='logo'>Travel Buddy</Link>
+                        </div>
+                        <div>
+                            <Link to={city} className='cityName'>{this.state.city.name}</Link>
+                        </div>
+                    </TopTitleBox>
                 </div>
                 {!this.state.showEdit ?
                     <div className='confirmationPost'>
@@ -99,11 +128,12 @@ class PostHomePage extends Component {
                 {
                     this.state.showEdit ?
                         <div>
+                            <form className='editContainer' onSubmit={this.handleSubmitNewPost}>
                             <h2>Edit Post</h2>
-                            <form onSubmit={this.handleSubmitNewPost}>
                                 <div>
-                                    <label>Post Title:</label>
-                                    <input
+                                    <label className='smallTitle'>Post Title:</label>
+                                    <br/>
+                                    <input className='editName'
                                         type="string"
                                         name="title"
                                         defaultValue={post.title}
@@ -113,8 +143,9 @@ class PostHomePage extends Component {
                                 </div>
 
                                 <div>
-                                    <label>Post Description:</label>
-                                    <textarea name="description"
+                                    <label className='smallTitle'>Post Description:</label>
+                                    <br/>
+                                    <textarea className='editName' name="description"
                                         placeholder={post.description}
                                         onChange={this.handleChangeInInputFields}>
                                     </textarea>
@@ -125,7 +156,6 @@ class PostHomePage extends Component {
                         : null
                 }
                 <div className='containsButtons'>
-                    <button className='newPostButton' onClick={() => { if (window.confirm(`Are you sure you want to delete ${post.title}?`)) this.deletePost(post.id) }}>Delete Post</button>
 
                     <button className='newPostButton' onClick={this.handleToggle}>
                         {this.state.showEdit
@@ -135,9 +165,17 @@ class PostHomePage extends Component {
                     </button>
 
                 </div>
+                <BottomNavBar>
+                    <div>
+                        <button className='newPostButton' onClick={() => { if (window.confirm(`Are you sure you want to delete ${post.title}?`)) this.deletePost(post.id) }}>Delete Post</button>
+                    </div>
 
-                <button className='backButton' onClick={() => this.goBack()}>Back</button>
+                    <div>
+                        <button className='backButton' onClick={() => this.goBack()}>Back</button>
+                    </div>
 
+
+                </BottomNavBar>
             </div >
         );
     }

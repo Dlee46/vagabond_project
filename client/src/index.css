@@ -140,6 +140,7 @@ border: none;
   font-size: 16px;
   font-weight: bolder;
   word-wrap: break-word;
+  margin-top: 20%;
 }
 
 .smallTitle{
@@ -147,4 +148,22 @@ border: none;
   color: teal;
 }
 
+.editContainer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20%;
+  width: 100vw;
+  height: 40vh;
+}
 
+.editName{
+  border: inset;
+  margin-top: 5% 0% 5% 0%;
+}
+
+.newPostForm{
+  margin-top: 35%;
+}
