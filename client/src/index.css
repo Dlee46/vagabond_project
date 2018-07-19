@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   padding: 0;
@@ -9,8 +8,6 @@ body {
 .cityPhoto{
   width: 100vw;
   height: auto;
-  
-  
 
 }
 
@@ -145,4 +142,5 @@ border: none;
   font-size: 20px;
   color: teal;
 }
+
 

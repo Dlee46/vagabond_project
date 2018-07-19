@@ -44,6 +44,7 @@ class NewPost extends Component {
     }
     render() {
         return (
+
           <NewPostPage>
             <div className='newPostPage'>
                 <h4 className='logo'>Travel Buddy</h4>
