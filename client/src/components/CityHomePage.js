@@ -104,7 +104,7 @@ class CityHomePage extends Component {
 
                 <div key={post.id}>
                     <div className='postsForCity' >
-                        <Link className='linksForPosts' to={`/cities/${cityId}/posts/${post.id}`}>{post.title}</Link>
+                        <Link className='linksForPosts' to={`/cities/${cityId}/posts/${post.id}`}>{post.title} <span id="commentAge">{post.ageOfPost} days old </span></Link>
                         <br />
 
                         {post.description}
